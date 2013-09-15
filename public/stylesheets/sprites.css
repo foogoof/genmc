@@ -1,0 +1,83 @@
+.sprite_apple_golden, .sprite_bedrock, .sprite_cactus_side, .sprite_crafting_table_top, .sprite_diamond_ore, .sprite_diamond_pickaxe, .sprite_ender_pearl, .sprite_ghast_tear, .sprite_log_oak, .sprite_mob_spawner, .sprite_mycelium_top, .sprite_nether_star, .sprite_porkchop_raw, .sprite_pumpkin_face_on, .sprite_repeater, .sprite_skull_creeper, .sprite_skull_steve, .sprite_stone_sword, .sprite_tnt_side, .sprite_wheat{
+	background: url(../images/sprites.png) no-repeat;
+}
+
+.sprite_apple_golden{
+	background-position: -10px -5px ;
+}
+
+.sprite_bedrock{
+	background-position: -105px -10px ;
+}
+
+.sprite_cactus_side{
+	background-position: -58px -9px ;
+}
+
+.sprite_crafting_table_top{
+	background-position: -211px -59px ;
+}
+
+.sprite_diamond_ore{
+	background-position: -161px -61px ;
+}
+
+.sprite_diamond_pickaxe{
+	background-position: -456px -58px ;
+}
+
+.sprite_ender_pearl{
+	background-position: -406px -58px ;
+}
+
+.sprite_ghast_tear{
+	background-position: -356px -57px ;
+}
+
+.sprite_log_oak{
+	background-position: -455px -10px ;
+}
+
+.sprite_mob_spawner{
+	background-position: -406px -11px ;
+}
+
+.sprite_mycelium_top{
+	background-position: -361px -10px ;
+}
+
+.sprite_nether_star{
+	background-position: -256px -62px ;
+}
+
+.sprite_porkchop_raw{
+	background-position: -308px -58px ;
+}
+
+.sprite_pumpkin_face_on{
+	background-position: -308px -10px ;
+}
+
+.sprite_repeater{
+	background-position: -108px -58px ;
+}
+
+.sprite_skull_creeper{
+	background-position: -61px -59px ;
+}
+
+.sprite_skull_steve{
+	background-position: -10px -60px ;
+}
+
+.sprite_stone_sword{
+	background-position: -256px -10px ;
+}
+
+.sprite_tnt_side{
+	background-position: -208px -11px ;
+}
+
+.sprite_wheat{
+	background-position: -158px -9px ;
+}

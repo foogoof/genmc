@@ -5,12 +5,13 @@
 
 var express = require('express');
 var consolidate = require('consolidate');
-var routes = require('./routes');
-var credits = require('./routes/credits');
+
 var http = require('http');
 var path = require('path');
 
 var app = express();
+
+var routes = require('./routes');
 
 
 // all environments
@@ -32,8 +33,15 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+// this just smells of n00b
 app.get('/', routes.index);
-app.get('/credits', credits.list);
+app.get('/biography', routes.biography);
+app.get('/credits', routes.credits);
+app.get('/kids_picks', routes.kids_picks);
+app.get('/miscellaneous', routes.miscellaneous);
+app.get('/resources', routes.resources);
+app.get('/summary', routes.summary);
+app.get('/technologies', routes.technologies);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

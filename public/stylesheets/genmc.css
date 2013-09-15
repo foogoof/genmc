@@ -1,0 +1,33 @@
+#logo td {
+    padding: 0;
+}
+
+#logo td.small {
+    height: 16px;
+    width: 16px;
+}
+
+#logo td.large {
+    height: 32px;
+    width: 32px;
+}
+
+#logo {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#ft {
+    text-align: center;
+    padding-top; 2em;
+}
+
+body {
+    padding: 1em 1em 1em 1em;
+}
+
+.sprite_seethrough {
+    background: url(../images/clear.png) no-repeat;
+    width: 32px;
+    height: 32px;
+}

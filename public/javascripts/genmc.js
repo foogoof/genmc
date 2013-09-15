@@ -41,25 +41,28 @@ var genMC = {
         [27, 2], [28, 2], [29, 2]
     ],
 
+    // thanks Dustycraft!
     images: [
-        'images/candidates/mycelium_top.png',
-        'images/candidates/tnt_side.png',
-        'images/candidates/porkchop_raw.png',
-        'images/candidates/skull_steve.png',
-        'images/candidates/repeater.png',
-        'images/candidates/mob_spawner.png',
-        'images/candidates/log_oak.png',
-        'images/candidates/skull_creeper.png',
-        'images/candidates/ender_pearl.png',
-        'images/candidates/ghast_tear.png',
-        'images/candidates/apple_golden.png',
-        'images/candidates/bedrock.png',
-        'images/candidates/diamond_ore.png',
-        'images/candidates/cactus_side.png',
-        'images/candidates/crafting_table_top.png',
-        'images/candidates/pumpkin_face_on.png',
-        'images/candidates/nether_star.png',
-        'images/candidates/diamond_pickaxe.png',
+        "sprite_apple_golden",
+        "sprite_bedrock",
+        "sprite_cactus_side",
+        "sprite_crafting_table_top",
+        "sprite_diamond_ore",
+        "sprite_diamond_pickaxe",
+        "sprite_ender_pearl",
+        "sprite_ghast_tear",
+        "sprite_log_oak",
+        "sprite_mob_spawner",
+        "sprite_mycelium_top",
+        "sprite_nether_star",
+        "sprite_porkchop_raw",
+        "sprite_pumpkin_face_on",
+        "sprite_repeater",
+        "sprite_skull_creeper",
+        "sprite_skull_steve",
+        "sprite_stone_sword",
+        "sprite_tnt_side",
+        "sprite_wheat"
     ],
     
     draw: function(letter, image) {
@@ -67,7 +70,7 @@ var genMC = {
             var x = letter[i][0];
             var y = letter[i][1];
             var id = 'x' + x + 'y' + y;
-            $("#" + id).html($("<img src='" + image + "'></img>"));
+            $("#" + id).removeClass(this.images.join(' ') + ' sprite_seethrough').addClass(image);
         }
     },
 
@@ -80,42 +83,45 @@ var genMC = {
 
     cur_image: 0,
     cycling: false,
+    seconds_per_cycle: 1,
+    scale: 'large',
 
     image_by_position: function(pos) {
-        if (pos % this.images.length === 0) {
-            this.images = _.shuffle(this.images)
-        }
-
         return this.images[pos % this.images.length]
     },
 
     clear_logo: function() {
         this.cycling = false;
-        this.draw_letters(function(_) { return 'images/clear.png'; });
+        this.draw_letters(function(_) { return 'sprite_seethrough'; });
     },
 
     default_logo: function() {
         this.cycling = false;
-        this.draw_letters(function(_) { return 'images/candidates/bedrock.png'; });
+        this.draw_letters(function(_) { return 'sprite_bedrock'; });
     },
-
-    default_seconds_per_cycle: 1,
 
     spin: function() {
         if (this.cycling === true) {
             this.draw_letters(_.bind(this.image_by_position, this));
 
             _.delay(_.bind(this.spin, this),
-                    this.default_seconds_per_cycle * 1000);
+                    this.seconds_per_cycle * 1000);
         }
     },
 
     cycle_logo: function() {
         this.cycling = true;
+        this.images = _.shuffle(this.images)
         this.spin();
     },
 
     small_logo: function() {
+        this.scale = 'small';
+        $("#logo td").removeClass('large').addClass('small');
+    },
+
+    big_logo: function() {
+        this.scale = 'large';
+        $("#logo td").removeClass('small').addClass('large');
     },
 };
-

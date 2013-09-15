@@ -1,0 +1,25 @@
+<div>
+  <a href="/">
+  <table id="logo">
+    <thead/>
+    <tbody>
+      {#
+        for row in [8..0]
+          {: <tr> :}
+          for col in [0..30]
+            {: <td id='x#{col}y#{row}' class='#{scale}'>&nbsp;</td> :}
+          {: </tr> :}
+      #}
+    </tbody>
+  </table>
+  </a>
+</div>
+<script>
+  console.log("You found me! Try these commands:");
+  console.log("genMC.default_logo()");
+  console.log("genMC.clear_logo()");
+  console.log("genMC.cycle_logo()");
+  console.log("genMC.small_logo()");
+  console.log("genMC.big_logo()");
+  genMC.#{action}()
+</script>
