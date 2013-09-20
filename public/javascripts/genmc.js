@@ -83,7 +83,7 @@ var genMC = {
 
     cur_image: 0,
     cycling: false,
-    seconds_per_cycle: 1,
+    seconds_per_cycle: 60,
     scale: 'large',
 
     image_by_position: function(pos) {
